@@ -34,7 +34,7 @@ class Bank extends BaseObject
         'kpp'                   => 'string|null',
         'okpo'                  => 'string|null',
         'correspondent_account' => 'string|null',
-        'treasury_accounts'     => 'string|null',
+        'treasury_accounts'     => 'array|null',
         'registration_number'   => 'string|null',
         'payment_city'          => 'string|null',
         'state'                 => 'Bank\\State',
