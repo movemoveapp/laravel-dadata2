@@ -140,17 +140,6 @@ class Type
             return $class::create($value);
         }
 
-        // проверяем, если значение объект, а ожидается скаляр
-        if (is_object($value)) {
-            var_dump([
-                'value' => $value,
-                'value_class' => get_class($value),
-                'expected_type' => $type,
-                'value_as_string' => (string) $value, // попытка привести к строке (может упасть, но мы увидим)
-            ]);
-            exit;
-        }
-
         throw new DaDataIntegrationException("Cannot cast value of type {$value_type} to type {$type}");
     }
 

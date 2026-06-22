@@ -65,7 +65,7 @@ class Organization extends BaseObject
         'management'        => 'Organization\\Ru\\Management',
         'branch_count'      => 'integer|null',
         'branch_type'       => 'string|null',
-        'address'           => 'Organization\\Ru\\Address',
+        'address'           => 'object',
         'state'             => 'Organization\\Ru\\State',
         'employee_count'    => 'integer|null',
         'finance'           => 'Organization\\Ru\\Finance',
