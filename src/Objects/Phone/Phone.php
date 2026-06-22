@@ -23,7 +23,7 @@ use MoveMoveApp\DaData\Objects\BaseObject;
 class Phone extends BaseObject
 {
     protected array $attributes = [
-        'contact'       => 'string|null',
+        'contact' => 'Phone\\Contact',
         'source'        => 'string|null',
         'qc'            => 'string|null',
         'type'          => 'enum:Phone\PhoneType|null',

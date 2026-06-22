@@ -22,7 +22,7 @@ class Management extends BaseObject
     protected array $attributes = [
         'ogrn'          => 'string|null',
         'inn'           => 'string|null',
-        'name'          => 'string|null|array',
+        'name'          => 'string|null',
         'fio'           => 'Organization\\Ru\\Fio',
         'post'          => 'string|null',
         'hid'           => 'string|null',

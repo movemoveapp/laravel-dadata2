@@ -140,11 +140,6 @@ class Type
             return $class::create($value);
         }
 
-        if (is_object($value)) {
-            $details = "Expected type: {$type}, but got object of class " . get_class($value) .
-                " with content: " . json_encode($value, JSON_UNESCAPED_UNICODE);
-            throw new DaDataIntegrationException($details);
-        }
         throw new DaDataIntegrationException("Cannot cast value of type {$value_type} to type {$type}");
     }
 
