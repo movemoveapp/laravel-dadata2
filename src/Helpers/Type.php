@@ -140,14 +140,11 @@ class Type
             return $class::create($value);
         }
 
-        if (is_object($value) && strpos($type, 'string') !== false) {
-            error_log("=== DaData cast error ===");
-            error_log("Expected type: " . $type);
-            error_log("Actual value class: " . get_class($value));
-            error_log("Object content: " . json_encode($value, JSON_UNESCAPED_UNICODE));
-            error_log("Backtrace: " . print_r(debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 5), true));
+        if (is_object($value)) {
+            $details = "Expected type: {$type}, but got object of class " . get_class($value) .
+                " with content: " . json_encode($value, JSON_UNESCAPED_UNICODE);
+            throw new DaDataIntegrationException($details);
         }
-
         throw new DaDataIntegrationException("Cannot cast value of type {$value_type} to type {$type}");
     }
 
